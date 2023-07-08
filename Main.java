@@ -77,7 +77,6 @@ class Menu {
                     }
                     break;
                 case 5:
-                    System.out.println();
                     break;
                 default:
                     break;
