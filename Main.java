@@ -1,16 +1,20 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Inventory {
     String name;
     String serialNumber;
     int value;
-    
+
     public Inventory(String name, String serialNumber, int value) {
         this.name = name;
         this.serialNumber = serialNumber;
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return  name  + "," + serialNumber + "," + value;
     }
 }
 
@@ -19,7 +23,7 @@ class Menu {
         ArrayList<Inventory> items = new ArrayList<Inventory>();
         Scanner in = new Scanner(System.in);
         int choice;
-        
+
         do {
             System.out.println("Press 1 to add an item.");
             System.out.println("Press 2 to delete an item.");
@@ -28,7 +32,7 @@ class Menu {
             System.out.println("Press 5 to quit the program.");
             choice = in.nextInt();
             in.nextLine(); // Consume newline character
-            
+
             switch (choice) {
                 case 1:
                     System.out.println("Enter the name:");
@@ -68,7 +72,9 @@ class Menu {
                     }
                     break;
                 case 4:
-                    System.out.println(Arrays.deepToString(items.toArray()));
+                    for (Inventory item : items) {
+                        System.out.println(item.name);
+                    }
                     break;
                 case 5:
                     System.out.println();
@@ -78,7 +84,7 @@ class Menu {
                     break;
             }
         } while (choice != 5);
-        
+
         in.close();
     }
 }
