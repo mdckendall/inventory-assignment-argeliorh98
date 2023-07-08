@@ -80,7 +80,6 @@ class Menu {
                     System.out.println();
                     break;
                 default:
-                    System.out.println();
                     break;
             }
         } while (choice != 5);
