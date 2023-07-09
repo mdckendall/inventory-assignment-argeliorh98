@@ -73,7 +73,7 @@ class Menu {
                     break;
                 case 4:
                     for (Inventory item : items) {
-                        System.out.println(item.name);
+                        System.out.println(item);
                     }
                     break;
                 case 5:
